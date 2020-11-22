@@ -1,9 +1,10 @@
 #include "Randomizer.h"
+#include "DataProvider.h"
 
 int main() {
-    Randomizer randomizer();
-    IDataProvider dataProvider();
-    randomizer.run();
+    Randomizer randomizer;
+    std::shared_ptr<DataProvider> dataProvider (new DataProvider);
+    randomizer.run(dataProvider);
 
     return 0;
 }

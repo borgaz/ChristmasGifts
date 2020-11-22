@@ -1,10 +1,11 @@
+#ifndef RANDOMIZER_H
+#define RANDOMIZER_H
+
 #include "FamilyMember.h"
-#include <random>
 
 class Randomizer {
-private:
 
 public:
-    Rundomizer();
-    void run();
-}
+    void run(std::shared_ptr<DataProvider> dataProvider);
+};
+#endif

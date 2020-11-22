@@ -1,3 +1,6 @@
+#ifndef FAMILY_MEMBER_H
+#define FAMILY_MEMBER_H
+
 #include <string>
 #include <list>
 
@@ -9,4 +12,5 @@ private:
 
 public:
     FamilyMember(int id, std::string name, std::initializer_list<int> excludedMembersIds);
-}
+};
+#endif

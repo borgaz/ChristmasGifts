@@ -1,16 +1,11 @@
-CXX = 
-
 christmasgifts: main.o FamilyMember.o Randomizer.o
-	$(CXX) main.o FamilyMember.o Randomizer.o -o CristmasGifts
+	g++ main.o FamilyMember.o Randomizer.o -o ChristmasGifts
 
 main.o: main.cpp Randomizer.h FamilyMember.h
-    $(CXX) main.cpp
+	g++ -std=c++17 -c main.cpp
 
 Randomizer.o: Randomizer.cpp Randomizer.h FamilyMember.h
-    $(CXX) Randomizer.cpp
+	g++ -std=c++17 -c Randomizer.cpp
 
 FamilyMember.o: FamilyMember.cpp FamilyMember.h
-    $(CXX) FamilyMember.cpp
-
-clean:
-	-rm *.o *~ 
+	g++ -std=c++17 -c FamilyMember.cpp
