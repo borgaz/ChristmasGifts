@@ -1,12 +1,22 @@
 #include "Randomizer.h"
 #include "DataProvider.h"
 
-int main() {
-    Randomizer randomizer;
-    std::shared_ptr<DataProvider> dataProvider (new DataProvider);
-    randomizer.run(dataProvider);
+#include <iostream>
 
-    return 0;
+int main() {
+	std::shared_ptr<DataProvider> dataProvider (new DataProvider());
+	Randomizer randomizer(dataProvider);
+	randomizer.run();
+
+	std::cout << "Podaj pelne imie rozpoczynajac wielka litera, albo napisz \"stop\" aby zakonczyc.\n";
+	std::string name;
+	std::cin >> name;
+	while (!name.compare("stop")) {
+		randomizer.printResult(name);
+		std::cin >> name;
+	}
+
+	return 0;
 }
 
 /*
