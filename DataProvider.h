@@ -3,12 +3,17 @@
 
 #include "FamilyMember.h"
 
-#include <list>
+#include <map>
 
 class DataProvider {
+private:
+	std::map<int, FamilyMember> mMembers;
+	std::map<std::string, int> mNameToIds;
+
 public:
 	DataProvider();
-	void fillList(std::list<FamilyMember>& membersList);
-	std::string getName(int id);
+	void initData();
+	void getData(std::map<int,FamilyMember>& familyMembers);
+	std::string getNameById(int id);
 };
 #endif

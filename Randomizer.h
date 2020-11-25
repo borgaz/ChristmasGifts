@@ -4,16 +4,15 @@
 #include "DataProvider.h"
 
 #include <memory>
-#include <map>
 
 class Randomizer {
 private:
 	std::shared_ptr<DataProvider> mDataProvider = nullptr;
-	std::list<FamilyMember> mMembersList;
+	std::map<int, FamilyMember> mFamilyMembers;
 	std::map<int, int> mResults;
 
 	int makePairs();
-	int getPair(FamilyMember& fm, std::list<FamilyMember>& recipientsList);
+	int getPair(std::pair<const int, FamilyMember>& fm, std::map<int, FamilyMember>& recipients);
 
 public:
 	Randomizer(std::shared_ptr<DataProvider> dataProvider);

@@ -6,16 +6,13 @@
 
 class FamilyMember {
 private:
-	int memberId;
 	std::string mName;
 	std::list<int> mExcludedMembersIds;
 
 public:
-	FamilyMember(int id, std::string name, std::initializer_list<int> excludedMembersIds);
-	int getId();
+	FamilyMember(std::string name, std::initializer_list<int> excludedMembersIds);
 	std::string getName();
+	std::list<int> getExcludedMembersIds();
 	bool checkIfExcluded(int id);
-
-	std::string toString();
 };
 #endif

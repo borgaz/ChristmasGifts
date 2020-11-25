@@ -1,14 +1,14 @@
 #include "FamilyMember.h"
 
-FamilyMember::FamilyMember(int id, std::string name, std::initializer_list<int> excludedMembersIds) : 
-		memberId(id), mName(name), mExcludedMembersIds(excludedMembersIds) {}
-
-int FamilyMember::getId() {
-	return memberId;
-}
+FamilyMember::FamilyMember(std::string name, std::initializer_list<int> excludedMembersIds) : 
+		mName(name), mExcludedMembersIds(excludedMembersIds) {}
 
 std::string FamilyMember::getName() {
 	return mName;
+}
+
+std::list<int> FamilyMember::getExcludedMembersIds() {
+	return mExcludedMembersIds;
 }
 
 bool FamilyMember::checkIfExcluded(int id) {
@@ -18,8 +18,4 @@ bool FamilyMember::checkIfExcluded(int id) {
 		}
 	}
 	return false;
-}
-
-std::string FamilyMember::toString() {
-	return std::string(std::to_string(memberId) + mName);
 }
